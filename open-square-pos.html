@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open Square POS</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 20px;
+      line-height: 1.45;
+      text-align: center;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 18px 28px;
+      border-radius: 12px;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .note {
+      margin-top: 28px;
+      color: #555;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Open Square POS</h1>
+
+  <p>
+    Your form has been submitted. Tap the button below to open Square Point of Sale
+    and complete the payment manually.
+  </p>
+
+  <a class="button" href="square-commerce-v1://">
+    Open Square POS
+  </a>
+
+  <p class="note">
+    If Square does not open, switch to the Square POS app manually from the iPad home screen.
+  </p>
+
+  <script>
+    // iPadOS/Safari may block automatic app launches unless triggered by a user tap.
+    // This attempts the launch, but the button above is the reliable fallback.
+    setTimeout(function () {
+      window.location.href = "square-commerce-v1://";
+    }, 700);
+  </script>
+</body>
+</html>
